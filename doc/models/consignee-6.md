@@ -1,0 +1,23 @@
+
+# Consignee 6
+
+## Structure
+
+`Consignee6`
+
+## Fields
+
+| Name | Type | Tags | Description | Getter | Setter |
+|  --- | --- | --- | --- | --- | --- |
+| `PartyID` | `String` | Required | - | String getPartyID() | setPartyID(String partyID) |
+| `AgencyCode` | `String` | Required | - | String getAgencyCode() | setAgencyCode(String agencyCode) |
+
+## Example (as JSON)
+
+```json
+{
+  "PartyID": "PartyID8",
+  "AgencyCode": "AgencyCode2"
+}
+```
+

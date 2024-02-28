@@ -46,12 +46,12 @@ public final class MichelinOrder2CashClient implements Configuration {
     /**
      * Private store for controllers.
      */
+    private InvoicesController invoices;
     private AuthenticationController authentication;
     private DeliveriesController deliveries;
-    private InvoicesController invoices;
     private OrdersController orders;
-    private ReferentialsController referentials;
     private StocksController stocks;
+    private ReferentialsController referentials;
     private OAuthAuthorizationController oAuthAuthorization;
 
     private static final CompatibilityFactory compatibilityFactory = new CompatibilityFactoryImpl();
@@ -180,12 +180,12 @@ public final class MichelinOrder2CashClient implements Configuration {
                 .build();
         this.oAuth2ClientCredentialsManager.applyGlobalConfiguration(globalConfig);
 
+        invoices = new InvoicesController(globalConfig);
         authentication = new AuthenticationController(globalConfig);
         deliveries = new DeliveriesController(globalConfig);
-        invoices = new InvoicesController(globalConfig);
         orders = new OrdersController(globalConfig);
-        referentials = new ReferentialsController(globalConfig);
         stocks = new StocksController(globalConfig);
+        referentials = new ReferentialsController(globalConfig);
         oAuthAuthorization = new OAuthAuthorizationController(globalConfig);
     }
 
@@ -194,6 +194,14 @@ public final class MichelinOrder2CashClient implements Configuration {
      */
     public static void shutdown() {
         OkClient.shutdown();
+    }
+
+    /**
+     * Get the instance of InvoicesController.
+     * @return invoices
+     */
+    public InvoicesController getInvoicesController() {
+        return invoices;
     }
 
     /**
@@ -213,14 +221,6 @@ public final class MichelinOrder2CashClient implements Configuration {
     }
 
     /**
-     * Get the instance of InvoicesController.
-     * @return invoices
-     */
-    public InvoicesController getInvoicesController() {
-        return invoices;
-    }
-
-    /**
      * Get the instance of OrdersController.
      * @return orders
      */
@@ -229,19 +229,19 @@ public final class MichelinOrder2CashClient implements Configuration {
     }
 
     /**
-     * Get the instance of ReferentialsController.
-     * @return referentials
-     */
-    public ReferentialsController getReferentialsController() {
-        return referentials;
-    }
-
-    /**
      * Get the instance of StocksController.
      * @return stocks
      */
     public StocksController getStocksController() {
         return stocks;
+    }
+
+    /**
+     * Get the instance of ReferentialsController.
+     * @return referentials
+     */
+    public ReferentialsController getReferentialsController() {
+        return referentials;
     }
 
     /**

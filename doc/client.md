@@ -5,35 +5,39 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
+| `apikey2` | `String` |  |
 | `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | `httpClientConfig` | [`ReadonlyHttpClientConfiguration`](http-client-configuration.md) | Http Client Configuration instance. |
-| `petstoreAuthCredentials` | [`PetstoreAuthCredentials`](auth/oauth-2-implicit-grant.md) | The Credentials Setter for OAuth 2 Implicit Grant |
-| `apiKeyCredentials` | [`ApiKeyCredentials`](auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
+| `apikeyCredentials` | [`ApikeyCredentials`](auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
+| `basicAuthCredentials` | [`BasicAuthCredentials`](auth/basic-authentication.md) | The Credentials Setter for Basic Authentication |
+| `oAuth2ClientCredentialsCredentials` | [`OAuth2ClientCredentialsCredentials`](auth/oauth-2-client-credentials-grant.md) | The Credentials Setter for OAuth 2 Client Credentials Grant |
 
 The API client can be initialized as follows:
 
 ```java
-SwaggerPetstoreOpenAPI30Client client = new SwaggerPetstoreOpenAPI30Client.Builder()
+MichelinOrder2CashClient client = new MichelinOrder2CashClient.Builder()
     .httpClientConfig(configBuilder -> configBuilder
             .timeout(0))
-    .petstoreAuthCredentials(new PetstoreAuthModel.Builder(
-            "OAuthClientId",
-            "OAuthRedirectUri"
+    .apikey2("apikey")
+    .apikeyCredentials(new ApikeyModel.Builder(
+            "apikey"
         )
-        .oAuthScopes(Arrays.asList(
-                OAuthScopePetstoreAuthEnum.WRITEPETS,
-                OAuthScopePetstoreAuthEnum.READPETS
-            ))
         .build())
-    .apiKeyCredentials(new ApiKeyModel.Builder(
-            "api_key"
+    .basicAuthCredentials(new BasicAuthModel.Builder(
+            "Username",
+            "Password"
+        )
+        .build())
+    .oAuth2ClientCredentialsCredentials(new OAuth2ClientCredentialsModel.Builder(
+            "OAuthClientId",
+            "OAuthClientSecret"
         )
         .build())
     .environment(Environment.PRODUCTION)
     .build();
 ```
 
-## Swagger Petstore - OpenAPI 3.0Client Class
+## Michelin Order-to-CashClient Class
 
 The gateway for the SDK. This class acts as a factory for the Controllers and also holds the configuration of the SDK.
 
@@ -41,9 +45,13 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 
 | Name | Description | Return Type |
 |  --- | --- | --- |
-| `getPetController()` | Provides access to Pet controller. | `PetController` |
-| `getUserController()` | Provides access to User controller. | `UserController` |
-| `getStoreController()` | Provides access to Store controller. | `StoreController` |
+| `getInvoicesController()` | Provides access to Invoices controller. | `InvoicesController` |
+| `getAuthenticationController()` | Provides access to Authentication controller. | `AuthenticationController` |
+| `getDeliveriesController()` | Provides access to Deliveries controller. | `DeliveriesController` |
+| `getOrdersController()` | Provides access to Orders controller. | `OrdersController` |
+| `getStocksController()` | Provides access to Stocks controller. | `StocksController` |
+| `getReferentialsController()` | Provides access to Referentials controller. | `ReferentialsController` |
+| `getOAuthAuthorizationController()` | Provides access to OAuthAuthorization controller. | `OAuthAuthorizationController` |
 
 ### Methods
 
@@ -51,10 +59,12 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 |  --- | --- | --- |
 | `shutdown()` | Shutdown the underlying HttpClient instance. | `void` |
 | `getEnvironment()` | Current API environment. | `Environment` |
+| `getApikey2()` | . | `String` |
 | `getHttpClient()` | The HTTP Client instance to use for making HTTP requests. | `HttpClient` |
 | `getHttpClientConfig()` | Http Client Configuration instance. | [`ReadonlyHttpClientConfiguration`](http-client-configuration.md) |
-| `getPetstoreAuthCredentials()` | The credentials to use with PetstoreAuth. | [`PetstoreAuthCredentials`](auth/oauth-2-implicit-grant.md) |
-| `getApiKeyCredentials()` | The credentials to use with ApiKey. | [`ApiKeyCredentials`](auth/custom-header-signature.md) |
+| `getApikeyCredentials()` | The credentials to use with Apikey. | [`ApikeyCredentials`](auth/custom-header-signature.md) |
+| `getBasicAuthCredentials()` | The credentials to use with BasicAuth. | [`BasicAuthCredentials`](auth/basic-authentication.md) |
+| `getOAuth2ClientCredentialsCredentials()` | The credentials to use with OAuth2ClientCredentials. | [`OAuth2ClientCredentialsCredentials`](auth/oauth-2-client-credentials-grant.md) |
 | `getBaseUri(Server server)` | Get base URI by current environment | `String` |
 | `getBaseUri()` | Get base URI by current environment | `String` |
 

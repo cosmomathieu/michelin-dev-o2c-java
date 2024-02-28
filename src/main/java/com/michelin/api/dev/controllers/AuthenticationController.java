@@ -73,7 +73,7 @@ public final class AuthenticationController extends BaseController {
                         .bodyParam(param -> param.value(body).isRequired(false))
                         .bodySerializer(() ->  ApiHelper.serialize(body))
                         .headerParam(param -> param.key("Content-Type")
-                                .value("application/json").isRequired(false))
+                                .value("multipart/form-data").isRequired(false))
                         .headerParam(param -> param.key("accept").value("application/json"))
                         .httpMethod(HttpMethod.POST))
                 .responseHandler(responseHandler -> responseHandler

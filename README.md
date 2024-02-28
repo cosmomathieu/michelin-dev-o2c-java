@@ -1,19 +1,15 @@
 
-# Getting Started with Swagger Petstore - OpenAPI 3.0
+# Getting Started with Michelin Order-to-Cash
 
 ## Introduction
 
-This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
-Swagger at [http://swagger.io](http://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
-You can now help us improve the API whether it's by making changes to the definition itself or to the code.
-That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
-
-Some useful links:
-
-- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
-- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
-
-Find out more about Swagger: [http://swagger.io](http://swagger.io)
+Michelin Order-to-Cash services for tires dealers, that will help you to manage your orders and invoices with Michelin.
+<br><br><b>Authentication details:</b><br>
+<br><u>Option A:</u> OAuth2 Client Credentials (recommended)
+<br><u>Option B:</u> API Key + Basic Authentication (not recommended)
+<br><br>To request your access, please contact your Customer Service Representative.
+<br><br>Our services are based on the EDIWHEEL standards.
+<br>You can find more information on the <a href="https://www.ediwheel.com/" target="_blank">EDIWHEEL website</a>.
 
 ## Building
 
@@ -26,57 +22,57 @@ you will need internet access for a successful build.
 
 * In order to open the client library in Eclipse click on `File -> Import`.
 
-![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=import0)
+![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=import0)
 
 * In the import dialog, select `Existing Java Project` and click `Next`.
 
-![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=import1)
+![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=import1)
 
 * Browse to locate the folder containing the source code. Select the detected location of the project and click `Finish`.
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=import2)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=import2)
 
 * Upon successful import, the project will be automatically built by Eclipse after automatically resolving the dependencies.
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=import3)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=import3)
 
 ## Installation
 
-The following section explains how to use the SwaggerPetstoreOpenAPI30Lib library in a new project.
+The following section explains how to use the MichelinOrder2Cash library in a new project.
 
 ### 1. Starting a new project
 
 For starting a new project, click the menu command `File > New > Project`.
 
-![Add a new project in Eclipse](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=createNewProject0)
+![Add a new project in Eclipse](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=createNewProject0)
 
 Next, choose `Maven > Maven Project` and click `Next`.
 
-![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=createNewProject1)
+![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=createNewProject1)
 
 Here, make sure to use the current workspace by choosing `Use default Workspace location`, as shown in the picture below and click `Next`.
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=createNewProject2)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=createNewProject2)
 
 Following this, select the *quick start* project type to create a simple project with an existing class and a `main` method. To do this, choose `maven-archetype-quickstart` item from the list and click `Next`.
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=createNewProject3)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=createNewProject3)
 
 In the last step, provide a `Group Id` and `Artifact Id` as shown in the picture below and click `Finish`.
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=createNewProject4)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=createNewProject4)
 
 ### 2. Add reference of the library project
 
-The created Maven project manages its dependencies using its `pom.xml` file. In order to add a dependency on the *SwaggerPetstoreOpenAPI30Lib* client library, double click on the `pom.xml` file in the `Package Explorer`. Opening the `pom.xml` file will render a graphical view on the canvas. Here, switch to the `Dependencies` tab and click the `Add` button as shown in the picture below.
+The created Maven project manages its dependencies using its `pom.xml` file. In order to add a dependency on the *MichelinOrder2Cash* client library, double click on the `pom.xml` file in the `Package Explorer`. Opening the `pom.xml` file will render a graphical view on the canvas. Here, switch to the `Dependencies` tab and click the `Add` button as shown in the picture below.
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=testProject0)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=testProject0)
 
-Clicking the `Add` button will open a dialog where you need to specify SwaggerPetstoreOpenAPI30Lib in `Group Id`, swagger-petstore-open-api30-lib in `Artifact Id` and 1.0.17 in the `Version` fields. Once added click `OK`. Save the `pom.xml` file.
+Clicking the `Add` button will open a dialog where you need to specify MichelinOrder2Cash in `Group Id`, michelin-order-2-cash in `Artifact Id` and 1.0.0 in the `Version` fields. Once added click `OK`. Save the `pom.xml` file.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=testProject1)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=testProject1)
 
-![Adding sample code](https://apidocs.io/illustration/java?workspaceFolder=Swagger%20Petstore%20-%20OpenAPI%203.0-Java&workspaceName=SwaggerPetstoreOpenAPI30&projectName=SwaggerPetstoreOpenAPI30Lib&rootNamespace=io.swagger.petstore&groupId=SwaggerPetstoreOpenAPI30Lib&artifactId=swagger-petstore-open-api30-lib&version=1.0.17&step=testProject2)
+![Adding sample code](https://apidocs.io/illustration/java?workspaceFolder=MichelinOrder2Cash-Java&workspaceName=MichelinOrder2Cash&projectName=MichelinOrder2Cash&rootNamespace=com.michelin.api.dev&groupId=MichelinOrder2Cash&artifactId=michelin-order-2-cash&version=1.0.0&step=testProject2)
 
 ### 3. Write sample code
 
@@ -90,7 +86,7 @@ JUnit is used as the testing framework and test runner.
 
 In Eclipse, for running the tests do the following:
 
-1. Select the project SwaggerPetstoreOpenAPI30Lib from the package explorer.
+1. Select the project MichelinOrder2Cash from the package explorer.
 2. Select `Run -> Run as -> JUnit Test` or use `Alt + Shift + X` followed by `T` to run the Tests.
 
 ## Initialize the API Client
@@ -101,46 +97,68 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
+| `apikey2` | `String` |  |
 | `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | `httpClientConfig` | [`ReadonlyHttpClientConfiguration`](doc/http-client-configuration.md) | Http Client Configuration instance. |
-| `petstoreAuthCredentials` | [`PetstoreAuthCredentials`](doc/auth/oauth-2-implicit-grant.md) | The Credentials Setter for OAuth 2 Implicit Grant |
-| `apiKeyCredentials` | [`ApiKeyCredentials`](doc/auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
+| `apikeyCredentials` | [`ApikeyCredentials`](doc/auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
+| `basicAuthCredentials` | [`BasicAuthCredentials`](doc/auth/basic-authentication.md) | The Credentials Setter for Basic Authentication |
+| `oAuth2ClientCredentialsCredentials` | [`OAuth2ClientCredentialsCredentials`](doc/auth/oauth-2-client-credentials-grant.md) | The Credentials Setter for OAuth 2 Client Credentials Grant |
 
 The API client can be initialized as follows:
 
 ```java
-SwaggerPetstoreOpenAPI30Client client = new SwaggerPetstoreOpenAPI30Client.Builder()
+MichelinOrder2CashClient client = new MichelinOrder2CashClient.Builder()
     .httpClientConfig(configBuilder -> configBuilder
             .timeout(0))
-    .petstoreAuthCredentials(new PetstoreAuthModel.Builder(
-            "OAuthClientId",
-            "OAuthRedirectUri"
+    .apikey2("apikey")
+    .apikeyCredentials(new ApikeyModel.Builder(
+            "apikey"
         )
-        .oAuthScopes(Arrays.asList(
-                OAuthScopePetstoreAuthEnum.WRITEPETS,
-                OAuthScopePetstoreAuthEnum.READPETS
-            ))
         .build())
-    .apiKeyCredentials(new ApiKeyModel.Builder(
-            "api_key"
+    .basicAuthCredentials(new BasicAuthModel.Builder(
+            "Username",
+            "Password"
+        )
+        .build())
+    .oAuth2ClientCredentialsCredentials(new OAuth2ClientCredentialsModel.Builder(
+            "OAuthClientId",
+            "OAuthClientSecret"
         )
         .build())
     .environment(Environment.PRODUCTION)
     .build();
 ```
 
+## Environments
+
+The SDK can be configured to use a different environment for making API calls. Available environments are:
+
+### Fields
+
+| Name | Description |
+|  --- | --- |
+| production | **Default** Dev server |
+| environment2 | Qualif server |
+| environment3 | Indus server |
+| environment4 | Production server |
+
 ## Authorization
 
 This API uses the following authentication schemes.
 
-* [`petstore_auth (OAuth 2 Implicit Grant)`](doc/auth/oauth-2-implicit-grant.md)
-* [`api_key (Custom Header Signature)`](doc/auth/custom-header-signature.md)
+* [`apikey (Custom Header Signature)`](doc/auth/custom-header-signature.md)
+* [`basicAuth (Basic Authentication)`](doc/auth/basic-authentication.md)
+* [`oAuth2ClientCredentials (OAuth 2 Client Credentials Grant)`](doc/auth/oauth-2-client-credentials-grant.md)
 
 ## List of APIs
 
-* [Pet](doc/controllers/pet.md)
-* [Store](doc/controllers/store.md)
-* [User](doc/controllers/user.md)
+* [O Auth Authorization](doc/controllers/o-auth-authorization.md)
+* [Authentication](doc/controllers/authentication.md)
+* [Deliveries](doc/controllers/deliveries.md)
+* [Invoices](doc/controllers/invoices.md)
+* [Orders](doc/controllers/orders.md)
+* [Referentials](doc/controllers/referentials.md)
+* [Stocks](doc/controllers/stocks.md)
 
 ## Classes Documentation
 

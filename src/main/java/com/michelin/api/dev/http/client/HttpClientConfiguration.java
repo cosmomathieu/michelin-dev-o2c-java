@@ -38,6 +38,14 @@ public class HttpClientConfiguration implements ReadonlyHttpClientConfiguration 
     }
 
     /**
+     * Allow or prevent skipping SSL certificate verification.
+     * @return isSkipSslCertVerification
+     */
+    public boolean isSkipSslCertVerification() {
+        return configuration.isSkipSslCertVerification();
+    }
+
+    /**
      * The number of retries to make.
      * @return numberOfRetries
      */
@@ -129,12 +137,14 @@ public class HttpClientConfiguration implements ReadonlyHttpClientConfiguration 
      */
     @Override
     public String toString() {
-        return "HttpClientConfiguration [" + "timeout=" + getTimeout() + ", numberOfRetries="
-                + getNumberOfRetries() + ", backOffFactor=" + getBackOffFactor()
-                + ", retryInterval=" + getRetryInterval() + ", httpStatusCodesToRetry="
-                + getHttpStatusCodesToRetry() + ", httpMethodsToRetry=" + getHttpMethodsToRetry()
-                + ", maximumRetryWaitTime=" + getMaximumRetryWaitTime() + ", shouldRetryOnTimeout="
-                + shouldRetryOnTimeout() + ", httpClientInstance=" + getHttpClientInstance()
+        return "HttpClientConfiguration [" + "timeout=" + getTimeout()
+                + ", isSkipSslCertVerification=" + isSkipSslCertVerification()
+                + ", numberOfRetries=" + getNumberOfRetries() + ", backOffFactor="
+                + getBackOffFactor() + ", retryInterval=" + getRetryInterval()
+                + ", httpStatusCodesToRetry=" + getHttpStatusCodesToRetry()
+                + ", httpMethodsToRetry=" + getHttpMethodsToRetry() + ", maximumRetryWaitTime="
+                + getMaximumRetryWaitTime() + ", shouldRetryOnTimeout=" + shouldRetryOnTimeout()
+                + ", httpClientInstance=" + getHttpClientInstance()
                 + ", overrideHttpClientConfigurations=" + shouldOverrideHttpClientConfigurations()
                 + "]";
     }
@@ -148,6 +158,7 @@ public class HttpClientConfiguration implements ReadonlyHttpClientConfiguration 
     public Builder newBuilder() {
         return new Builder()
                 .timeout(getTimeout())
+                .isSkipSslCertVerification(isSkipSslCertVerification())
                 .numberOfRetries(getNumberOfRetries())
                 .backOffFactor(getBackOffFactor())
                 .retryInterval(getRetryInterval())
@@ -184,6 +195,16 @@ public class HttpClientConfiguration implements ReadonlyHttpClientConfiguration 
          */
         public Builder timeout(long timeout) {
             configurationBuilder.timeout(timeout);
+            return this;
+        }
+
+        /**
+         * Allow or prevent skipping SSL certificate verification.
+         * @param isSkipSslCertVerification The isSkipSslCertVerification to set
+         * @return Builder
+         */
+        public Builder isSkipSslCertVerification(boolean isSkipSslCertVerification) {
+            configurationBuilder.isSkipSslCertVerification(isSkipSslCertVerification);
             return this;
         }
 

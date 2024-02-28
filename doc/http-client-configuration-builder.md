@@ -14,6 +14,7 @@ Class to build instances of {@link HttpClientConfiguration}.
 | Name | Description | Return Type |
 |  --- | --- | --- |
 | `timeout(long timeout)` | Sets the timeout in seconds to use for making http requests. | [`Builder`](http-client-configuration-builder.md) |
+| `isSkipSslCertVerification(boolean isSkipSslCertVerification)` | Sets allow or prevent skipping ssl certificate verification. | [`Builder`](http-client-configuration-builder.md) |
 | `numberOfRetries(int numberOfRetries)` | Sets the number of retries to make. | [`Builder`](http-client-configuration-builder.md) |
 | `backOffFactor(int backOffFactor)` | Sets to use in calculation of wait time for next request in case of failure. | [`Builder`](http-client-configuration-builder.md) |
 | `retryInterval(long retryInterval)` | Sets to use in calculation of wait time for next request in case of failure. | [`Builder`](http-client-configuration-builder.md) |

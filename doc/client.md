@@ -5,7 +5,6 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `apikey2` | `String` |  |
 | `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | `httpClientConfig` | [`ReadonlyHttpClientConfiguration`](http-client-configuration.md) | Http Client Configuration instance. |
 | `apikeyCredentials` | [`ApikeyCredentials`](auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
@@ -18,7 +17,6 @@ The API client can be initialized as follows:
 MichelinOrder2CashClient client = new MichelinOrder2CashClient.Builder()
     .httpClientConfig(configBuilder -> configBuilder
             .timeout(0))
-    .apikey2("apikey")
     .apikeyCredentials(new ApikeyModel.Builder(
             "apikey"
         )
@@ -59,7 +57,6 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 |  --- | --- | --- |
 | `shutdown()` | Shutdown the underlying HttpClient instance. | `void` |
 | `getEnvironment()` | Current API environment. | `Environment` |
-| `getApikey2()` | . | `String` |
 | `getHttpClient()` | The HTTP Client instance to use for making HTTP requests. | `HttpClient` |
 | `getHttpClientConfig()` | Http Client Configuration instance. | [`ReadonlyHttpClientConfiguration`](http-client-configuration.md) |
 | `getApikeyCredentials()` | The credentials to use with Apikey. | [`ApikeyCredentials`](auth/custom-header-signature.md) |

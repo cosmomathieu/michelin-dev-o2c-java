@@ -65,7 +65,6 @@ public class BaseControllerTest {
         MichelinOrder2CashClient.Builder builder = new MichelinOrder2CashClient.Builder();
 
         final String environment = System.getenv("MICHELIN_ORDER_2_CASH_ENVIRONMENT");
-        final String apikey2 = System.getenv("MICHELIN_ORDER_2_CASH_APIKEY_2");
         final String timeout = System.getenv("MICHELIN_ORDER_2_CASH_TIMEOUT");
         final String apikey = System.getenv("MICHELIN_ORDER_2_CASH_APIKEY");
         final String username = System.getenv("MICHELIN_ORDER_2_CASH_USERNAME");
@@ -91,9 +90,6 @@ public class BaseControllerTest {
         }
         if (environment != null) {
             builder.environment(Environment.fromString(environment));
-        }
-        if (apikey2 != null) {
-            builder.apikey2(apikey2);
         }
         if (timeout != null) {
             builder.httpClientConfig(configBuilder -> configBuilder.timeout(

@@ -26,12 +26,6 @@ public interface Configuration {
     Environment getEnvironment();
 
     /**
-     * .
-     * @return a copy of apikey2
-     */
-    String getApikey2();
-
-    /**
      * Http Client Configuration instance.
      * @return a copy of httpClientConfig
      */

@@ -97,7 +97,6 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `apikey2` | `String` |  |
 | `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | `httpClientConfig` | [`ReadonlyHttpClientConfiguration`](doc/http-client-configuration.md) | Http Client Configuration instance. |
 | `apikeyCredentials` | [`ApikeyCredentials`](doc/auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
@@ -110,7 +109,6 @@ The API client can be initialized as follows:
 MichelinOrder2CashClient client = new MichelinOrder2CashClient.Builder()
     .httpClientConfig(configBuilder -> configBuilder
             .timeout(0))
-    .apikey2("apikey")
     .apikeyCredentials(new ApikeyModel.Builder(
             "apikey"
         )

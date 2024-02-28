@@ -33,7 +33,6 @@ import io.apimatic.okhttpclient.adapter.OkClient;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 import java.util.function.Consumer;
 
 /**
@@ -62,11 +61,6 @@ public final class MichelinOrder2CashClient implements Configuration {
      * Current API environment.
      */
     private final Environment environment;
-
-    /**
-     * .
-     */
-    private final String apikey2;
 
     /**
      * The HTTP Client instance to use for making HTTP requests.
@@ -118,13 +112,12 @@ public final class MichelinOrder2CashClient implements Configuration {
      */
     private final HttpCallback httpCallback;
 
-    private MichelinOrder2CashClient(Environment environment, String apikey2, HttpClient httpClient,
+    private MichelinOrder2CashClient(Environment environment, HttpClient httpClient,
             ReadonlyHttpClientConfiguration httpClientConfig, ApikeyModel apikeyModel,
             BasicAuthModel basicAuthModel,
             OAuth2ClientCredentialsModel oAuth2ClientCredentialsModel,
             Map<String, Authentication> authentications, HttpCallback httpCallback) {
         this.environment = environment;
-        this.apikey2 = apikey2;
         this.httpClient = httpClient;
         this.httpClientConfig = httpClientConfig;
         this.httpCallback = httpCallback;
@@ -176,7 +169,6 @@ public final class MichelinOrder2CashClient implements Configuration {
                 .authentication(this.authentications)
                 .callback(httpCallback)
                 .userAgent(userAgent)
-                .globalHeader("apikey", apikey2)
                 .build();
         this.oAuth2ClientCredentialsManager.applyGlobalConfiguration(globalConfig);
 
@@ -258,14 +250,6 @@ public final class MichelinOrder2CashClient implements Configuration {
      */
     public Environment getEnvironment() {
         return environment;
-    }
-
-    /**
-     * .
-     * @return apikey2
-     */
-    public String getApikey2() {
-        return apikey2;
     }
 
     /**
@@ -404,23 +388,13 @@ public final class MichelinOrder2CashClient implements Configuration {
     }
 
     /**
-     * Configuration variables loaded from Properties.
-     * @param configProperties Properties
-     * @return MichelinOrder2CashClient instance.
-     */
-    public static MichelinOrder2CashClient loadFromProperties(Properties configProperties) {
-        return new MichelinOrder2CashClient.Builder(configProperties).build();
-    }
-
-    /**
      * Converts this MichelinOrder2CashClient into string format.
      * @return String representation of this class
      */
     @Override
     public String toString() {
-        return "MichelinOrder2CashClient [" + "environment=" + environment + ", apikey2=" + apikey2
-                + ", httpClientConfig=" + httpClientConfig + ", authentications=" + authentications
-                + "]";
+        return "MichelinOrder2CashClient [" + "environment=" + environment + ", httpClientConfig="
+                + httpClientConfig + ", authentications=" + authentications + "]";
     }
 
     /**
@@ -431,7 +405,6 @@ public final class MichelinOrder2CashClient implements Configuration {
     public Builder newBuilder() {
         Builder builder = new Builder();
         builder.environment = getEnvironment();
-        builder.apikey2 = getApikey2();
         builder.httpClient = getHttpClient();
         builder.apikeyCredentials(getApikeyModel()
                 .toBuilder().build());
@@ -452,7 +425,6 @@ public final class MichelinOrder2CashClient implements Configuration {
     public static class Builder {
 
         private Environment environment = Environment.PRODUCTION;
-        private String apikey2 = "TODO: Replace";
         private HttpClient httpClient;
         private ApikeyModel apikeyModel = new ApikeyModel.Builder("").build();
         private BasicAuthModel basicAuthModel = new BasicAuthModel.Builder("", "").build();
@@ -463,13 +435,6 @@ public final class MichelinOrder2CashClient implements Configuration {
         private HttpClientConfiguration.Builder httpClientConfigBuilder =
                 new HttpClientConfiguration.Builder();
 
-
-        public Builder() {}
-
-        public Builder(Properties configProperties) {
-           this.environment = Environment.fromString(configProperties.getProperty("environment", Environment.PRODUCTION.toString()));
-           this.apikey2 = configProperties.getProperty("apikey2", "TODO: Replace");
-        }
 
         /**
          * Credentials setter for ApikeyCredentials.
@@ -509,19 +474,6 @@ public final class MichelinOrder2CashClient implements Configuration {
          */
         public Builder environment(Environment environment) {
             this.environment = environment;
-            return this;
-        }
-
-        /**
-         * .
-         * @param apikey2 The apikey2 for client.
-         * @return Builder
-         */
-        public Builder apikey2(String apikey2) {
-            if (apikey2 == null) {
-                throw new NullPointerException("apikey2 cannot be null");
-            }
-            this.apikey2 = apikey2;
             return this;
         }
 
@@ -568,7 +520,7 @@ public final class MichelinOrder2CashClient implements Configuration {
             HttpClientConfiguration httpClientConfig = httpClientConfigBuilder.build();
             httpClient = new OkClient(httpClientConfig.getConfiguration(), compatibilityFactory);
 
-            return new MichelinOrder2CashClient(environment, apikey2, httpClient, httpClientConfig,
+            return new MichelinOrder2CashClient(environment, httpClient, httpClientConfig,
                     apikeyModel, basicAuthModel, oAuth2ClientCredentialsModel, authentications,
                     httpCallback);
         }
